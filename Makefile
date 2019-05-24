@@ -27,21 +27,9 @@ EXTRA_LDFLAGS += --strip-debug
 CONFIG_AUTOCFG_CP = n
 
 ########################## WIFI IC ############################
-CONFIG_MULTIDRV = n
-CONFIG_RTL8188E = n
 CONFIG_RTL8812A = y
-CONFIG_RTL8821A = n
-CONFIG_RTL8192E = n
-CONFIG_RTL8723B = n
-CONFIG_RTL8814A = n
-CONFIG_RTL8723C = n
-CONFIG_RTL8188F = n
-CONFIG_RTL8188GTV = n
-CONFIG_RTL8822B = n
-CONFIG_RTL8723D = n
-CONFIG_RTL8821C = n
-CONFIG_RTL8710B = n
-CONFIG_RTL8192F = n
+CONFIG_RTL8821A = y
+CONFIG_RTL8814A = y
 ######################### Interface ###########################
 CONFIG_USB_HCI = y
 CONFIG_PCI_HCI = n
@@ -194,6 +182,47 @@ ifeq ($(CONFIG_PCI_HCI), y)
 HCI_NAME = pci
 endif
 
+ifeq ($(CONFIG_RTL8812A)_$(CONFIG_RTL8821A)_$(CONFIG_RTL8814A), y_y_y)
+
+EXTRA_CFLAGS += -DDRV_NAME=\"rtl88xxau\"
+ifeq ($(CONFIG_USB_HCI), y)
+USER_MODULE_NAME = 88XXau
+endif
+ifeq ($(CONFIG_PCI_HCI), y)
+USER_MODULE_NAME = 88XXae
+endif
+ifeq ($(CONFIG_SDIO_HCI), y)
+USER_MODULE_NAME = 88XXas
+endif
+
+ifeq ($(CONFIG_RTL8812A)_$(CONFIG_RTL8821A)_$(CONFIG_RTL8814A), y_y_y)
+
+EXTRA_CFLAGS += -DDRV_NAME=\"rtl88xxau\"
+ifeq ($(CONFIG_USB_HCI), y)
+USER_MODULE_NAME = 88XXau
+endif
+ifeq ($(CONFIG_PCI_HCI), y)
+USER_MODULE_NAME = 88XXae
+endif
+ifeq ($(CONFIG_SDIO_HCI), y)
+USER_MODULE_NAME = 88XXas
+endif
+
+else
+EXTRA_CFLAGS += -DDRV_NAME=\"rtl8812au\"
+endif
+
+#ifeq ($(RTL8814), 1)
+#CONFIG_RTL8812A = n
+#CONFIG_RTL8821A = n
+#CONFIG_RTL8814A = y
+#endif
+
+#ifeq ($(RTL8821), 1)
+#CONFIG_RTL8812A = y
+#CONFIG_RTL8821A = y
+#CONFIG_RTL8814A = n
+#endif
 
 _OS_INTFS_FILES :=	os_dep/osdep_service.o \
 			os_dep/linux/os_intfs.o \
@@ -1200,6 +1229,20 @@ EXTRA_CFLAGS += -DCONFIG_RTW_CFGVEDNOR_LLSTATS
 EXTRA_CFLAGS += -DCONFIG_RTW_CFGVENDOR_RANDOM_MAC_OUI
 EXTRA_CFLAGS += -DCONFIG_RTW_CFGVEDNOR_RSSIMONITOR
 EXTRA_CFLAGS += -DCONFIG_RTW_CFGVENDOR_WIFI_LOGGER
+endif
+
+ifeq ($(CONFIG_VHT_EXTRAS), y)
+EXTRA_CFLAGS += -DCONFIG_VHT_EXTRAS
+endif
+
+ifeq ($(CONFIG_LED_CONTROL), y)
+EXTRA_CFLAGS += -DCONFIG_LED_CONTROL
+ifeq ($(RTL8814), 1)
+EXTRA_CFLAGS += -DCONFIG_SW_LED -DCONFIG_RTW_SW_LED
+endif
+ifeq ($(CONFIG_LED_ENABLE), y)
+EXTRA_CFLAGS += -DCONFIG_LED_ENABLE
+endif
 endif
 
 ifeq ($(CONFIG_MP_VHT_HW_TX_MODE), y)
@@ -2323,4 +2366,4 @@ clean:
 	rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~
 	rm -fr .tmp_versions
 endif
-
+endif
