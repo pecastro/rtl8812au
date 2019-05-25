@@ -53,11 +53,12 @@ void phy_dp_calibrate_8812a(struct dm_struct *dm);
 
 void halrf_rf_lna_setting_8812a(struct dm_struct *dm, enum halrf_lna_set type);
 
-void phy_set_rf_path_switch_8812a(
-#if ((DM_ODM_SUPPORT_TYPE & ODM_AP) || (DM_ODM_SUPPORT_TYPE == ODM_CE))
-				  struct dm_struct *dm,
+//void phy_set_rf_path_switch_8812a(
+#if (DM_ODM_SUPPORT_TYPE & ODM_AP)
+	struct dm_struct *dm,
 #else
-				  void *adapter,
+	void *adapter,
 #endif
-				  boolean is_main);
+	boolean 	is_main
+);
 #endif /*#ifndef __HALRF_8812A_H__*/

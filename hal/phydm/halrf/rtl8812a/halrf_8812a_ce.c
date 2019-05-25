@@ -98,7 +98,7 @@ void odm_tx_pwr_track_set_pwr8812a(void *dm_void, enum pwrtrack_method method,
 	u8 final_cck_swing_index = 0;
 	u8 i = 0;
 	struct dm_rf_calibration_struct *cali_info = &(dm->rf_calibrate_info);
-	struct _hal_rf_ *rf = &(dm->rf_table);
+	struct _hal_rf_ *p_rf = &(p_dm->rf_table);
 
 	if (*dm->mp_mode == true) {
 #if (DM_ODM_SUPPORT_TYPE & (ODM_WIN | ODM_CE))
@@ -332,7 +332,7 @@ void get_delta_swing_table_8812a(void *dm_void, u8 **temperature_up_a,
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct _ADAPTER *adapter = dm->adapter;
 	struct dm_rf_calibration_struct *cali_info = &(dm->rf_calibrate_info);
-	struct _hal_rf_ *rf = &(dm->rf_table);
+	struct _hal_rf_ *p_rf = &(p_dm->rf_table);
 	HAL_DATA_TYPE *hal_data = GET_HAL_DATA(adapter);
 	u8 tx_rate = 0xFF;
 	u8 channel = *dm->channel;
@@ -730,8 +730,8 @@ void _iqk_tx_8812a(struct dm_struct *dm, u8 chnl_idx)
 		cal1_retry = 0;
 		while (1) {
 			/* one shot */
-			odm_write_4byte(dm, 0xcb8, 0x00100000);
-			odm_write_4byte(dm, 0xeb8, 0x00100000);
+			odm_write_4byte(p_dm, 0xcb8, 0x00100000);/* cb8[20]  iqk_dpk module */
+			odm_write_4byte(p_dm, 0xeb8, 0x00100000);/* cb8[20]  iqk_dpk module */
 			odm_write_4byte(dm, 0x980, 0xfa000000);
 			odm_write_4byte(dm, 0x980, 0xf8000000);
 
@@ -1312,7 +1312,7 @@ void phy_lc_calibrate_8812a(void *dm_void)
 }
 
 void _phy_set_rf_path_switch_8812a(
-#if ((DM_ODM_SUPPORT_TYPE & ODM_AP) || (DM_ODM_SUPPORT_TYPE == ODM_CE))
+#if (DM_ODM_SUPPORT_TYPE & ODM_AP)
 				   struct dm_struct *dm,
 #else
 				   void *adapter,
@@ -1320,11 +1320,10 @@ void _phy_set_rf_path_switch_8812a(
 				   boolean is_main, boolean is2T)
 {
 #if !(DM_ODM_SUPPORT_TYPE & ODM_AP)
-#if (DM_ODM_SUPPORT_TYPE == ODM_CE)
-	void *adapter = dm->adapter;
-#endif
 	HAL_DATA_TYPE *hal_data = GET_HAL_DATA(adapter);
-#if (DM_ODM_SUPPORT_TYPE == ODM_WIN)
+#if (DM_ODM_SUPPORT_TYPE == ODM_CE)
+	struct PHY_DM_STRUCT		*p_dm = &p_hal_data->odmpriv;
+#elif (DM_ODM_SUPPORT_TYPE == ODM_WIN)
 	struct dm_struct *dm = &hal_data->DM_OutSrc;
 #endif
 #endif
@@ -1350,7 +1349,7 @@ void _phy_set_rf_path_switch_8812a(
 }
 
 void phy_set_rf_path_switch_8812a(
-#if ((DM_ODM_SUPPORT_TYPE & ODM_AP) || (DM_ODM_SUPPORT_TYPE == ODM_CE))
+#if (DM_ODM_SUPPORT_TYPE & ODM_AP)
 				  struct dm_struct *dm,
 #else
 				  void *adapter,
@@ -1362,11 +1361,7 @@ void phy_set_rf_path_switch_8812a(
 #endif
 
 #if !(DM_ODM_SUPPORT_TYPE & ODM_AP)
-#if (DM_ODM_SUPPORT_TYPE == ODM_CE)
-	_phy_set_rf_path_switch_8812a(dm, is_main, true);
-#else
 	_phy_set_rf_path_switch_8812a(adapter, is_main, true);
-#endif
 #endif
 }
 

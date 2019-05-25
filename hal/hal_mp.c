@@ -1830,8 +1830,8 @@ void hal_mpt_SetSingleToneTx(PADAPTER pAdapter, u8 bStart)
 #endif
 		}
 #if defined(CONFIG_RTL8814A)
-				else if (IS_HARDWARE_TYPE_8814A(pAdapter))
-						mpt_SetSingleTone_8814A(pAdapter, TRUE, FALSE);
+		else if (IS_HARDWARE_TYPE_8814A(pAdapter))
+			mpt_SetSingleTone_8814A(pAdapter, TRUE, FALSE);
 #endif
 		else	/*/ Turn On SingleTone and turn off the other test modes.*/
 			phy_set_bb_reg(pAdapter, rOFDM1_LSTF, BIT30 | BIT29 | BIT28, OFDM_SingleTone);
@@ -1928,9 +1928,10 @@ void hal_mpt_SetSingleToneTx(PADAPTER pAdapter, u8 bStart)
 		else if (IS_HARDWARE_TYPE_8814A(pAdapter))
 			mpt_SetSingleTone_8814A(pAdapter, FALSE, FALSE);
 
+#endif
 		else/*/ Turn off all test modes.*/
 			phy_set_bb_reg(pAdapter, rSingleTone_ContTx_Jaguar, BIT18 | BIT17 | BIT16, OFDM_ALL_OFF);
-#endif
+
 		write_bbreg(pAdapter, rFPGA0_XA_HSSIParameter1, bMaskDWord, 0x01000100);
 		write_bbreg(pAdapter, rFPGA0_XB_HSSIParameter1, bMaskDWord, 0x01000100);
 
@@ -2149,7 +2150,7 @@ static	VOID mpt_StartOfdmContTx(
 }	/* mpt_StartOfdmContTx */
 
 
-#if defined(CONFIG_RTL8814A) || defined(CONFIG_RTL8821B) || defined(CONFIG_RTL8822B) || defined(CONFIG_RTL8821C)
+//#if defined(CONFIG_RTL8814A) || defined(CONFIG_RTL8821B) || defined(CONFIG_RTL8822B) || defined(CONFIG_RTL8821C)
 /* for HW TX mode */
 void mpt_ProSetPMacTx(PADAPTER	Adapter)
 {
@@ -2200,7 +2201,10 @@ void mpt_ProSetPMacTx(PADAPTER	Adapter)
 			else
 				mpt_StopOfdmContTx(Adapter);
 
-			mpt_SetSingleTone_8814A(Adapter, FALSE, TRUE);
+#if defined(CONFIG_RTL8814A)
+			if (IS_HARDWARE_TYPE_8814A(Adapter))
+				mpt_SetSingleTone_8814A(Adapter, FALSE, TRUE);
+#endif
 		}
 		pMptCtx->HWTxmode = TEST_NONE;
 		return;
@@ -2364,12 +2368,14 @@ void mpt_ProSetPMacTx(PADAPTER	Adapter)
 	} else
 		phy_set_bb_reg(Adapter, 0xb04, 0xf, 4);		/*	TX Ofdm ON	*/
 
-	if (PMacTxInfo.Mode == OFDM_Single_Tone_TX)
-		mpt_SetSingleTone_8814A(Adapter, TRUE, TRUE);
+#if defined(CONFIG_RTL8814A)
+	if (PMacTxInfo.Mode == OFDM_Single_Tone_TX) {
+		if (IS_HARDWARE_TYPE_8814A(Adapter))
+			mpt_SetSingleTone_8814A(Adapter, TRUE, TRUE);
+	}
+#endif
 
 }
-
-#endif
 
 void hal_mpt_SetContinuousTx(PADAPTER pAdapter, u8 bStart)
 {

@@ -133,11 +133,13 @@ PHY_SetSwChnlBWMode8812(
  * BB/MAC/RF other monitor API
  *   */
 
+/* kimocoder closed this double so long
 VOID
 phy_set_rf_path_switch_8812a(
-	IN	struct dm_struct		*phydm,
+	IN	PADAPTER	pAdapter,
 	IN	bool		bMain
 );
+*/
 
 /*--------------------------Exported Function prototype---------------------*/
 #endif /* __INC_HAL8192CPHYCFG_H */

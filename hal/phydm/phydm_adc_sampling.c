@@ -56,18 +56,18 @@ phydm_la_buffer_allocate(void *dm_void)
 	pr_debug("[LA mode BufferAllocate]\n");
 
 	if (buf->length == 0) {
-	#if (DM_ODM_SUPPORT_TYPE & ODM_WIN)
+	if (DM_ODM_SUPPORT_TYPE & ODM_WIN)
 		if (PlatformAllocateMemoryWithZero(adapter, (void **)&
 						   buf->octet,
 						   buf->buffer_size) !=
 						   RT_STATUS_SUCCESS)
 			ret = false;
-	#else
+	} else {
 		odm_allocate_memory(dm, (void **)&buf->octet, buf->buffer_size);
 
 		if (!buf->octet)
 			ret = false;
-	#endif
+	}
 
 		if (ret)
 			buf->length = buf->buffer_size;

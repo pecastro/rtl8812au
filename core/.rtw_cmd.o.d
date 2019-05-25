@@ -1,5 +1,5 @@
-rtw_security.o: \
- /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/core/rtw_security.c \
+rtw_cmd.o: \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/core/rtw_cmd.c \
  /usr/src/linux-headers-4.19.0-kali5-common/include/linux/kconfig.h \
  include/generated/autoconf.h \
  /usr/src/linux-headers-4.19.0-kali5-common/include/linux/compiler_types.h \
@@ -767,4 +767,109 @@ rtw_security.o: \
  /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/usb_vendor_req.h \
  /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/usb_ops.h \
  /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/usb_ops_linux.h \
- /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/usb_hal.h
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/usb_hal.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/hal_data.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_precomp.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_types.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/halrf_features.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_pre_define.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_features.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_features_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_dig.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_soml.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_rainfo.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_cfotracking.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_adaptivity.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_dfs.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_ccx.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/txbf/phydm_hal_txbf_api.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_adc_sampling.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_psd.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_cck_pd.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_rssi_monitor.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_math_lib.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_noisemonitor.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_api.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_beamforming.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/txbf/halcomtxbf.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/txbf/haltxbfjaguar.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/txbf/haltxbf8192e.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/txbf/haltxbf8814a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/txbf/haltxbf8822b.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/txbf/haltxbfinterface.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_regtable.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/halrf_iqk.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/halrf_dpk.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/halrf.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/hal/phydm/halrf/halrf_psd.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/halrf_powertracking.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/halphyrf_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/hal/phydm/halrf/halrf_kfree.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/hal/phydm/halrf/rtl8814a/halrf_iqk_8814a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/hal/phydm/halrf/halrf_powertracking_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_hwconfig.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_phystatus.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_debug.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_regdefine11ac.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_regdefine11n.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_interface.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/phydm_reg.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/halrf_debug.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/rtl8812a/halrf_8812a_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8812a/halhwimg8812a_bb.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8812a/halhwimg8812a_mac.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8812a/halhwimg8812a_rf.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8812a/phydm_regconfig8812a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8812a/phydm_rtl8812a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_hal.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/hal_data.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_spec.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8821a_spec.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/hal_com_reg.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_spec.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_rf.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_dm.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_recv.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_xmit.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8821a_xmit.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_cmd.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_led.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/Hal8812PwrSeq.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/HalPwrSeqCmd.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/Hal8821APwrSeq.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/Hal8812PhyReg.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/Hal8812PhyCfg.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8812a_sreset.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8812a/version_rtl8812a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8814a/halhwimg8814a_mac.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8814a/halhwimg8814a_rf.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8814a/halhwimg8814a_bb.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8814a/version_rtl8814a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8814a/phydm_rtl8814a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/rtl8814a/halrf_8814a_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/rtl8814a/../halphyrf_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8814a/phydm_regconfig8814a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_hal.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_spec.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_rf.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_dm.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_recv.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_xmit.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_cmd.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/hal_com_h2c.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_led.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/Hal8814PwrSeq.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/Hal8814PhyReg.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/Hal8814PhyCfg.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/rtl8814a_sreset.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/rtl8814a/halrf_iqk_8814a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8821a/halhwimg8821a_mac.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8821a/halhwimg8821a_rf.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8821a/halhwimg8821a_bb.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8821a/phydm_regconfig8821a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8821a/phydm_rtl8821a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/rtl8821a/version_rtl8821a.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/rtl8821a/halrf_8821a_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/../hal/phydm/halrf/rtl8821a/halrf_iqk_8821a_ce.h \
+ /root/Desktop/RTL8812AU_WiFi_linuxv5.6.4_33522.20190509/driver/rtl8812au/include/hal_btcoex_wifionly.h

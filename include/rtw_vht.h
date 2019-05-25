@@ -169,7 +169,7 @@ void	rtw_process_vht_op_mode_notify(_adapter *padapter, u8 *pframe, PVOID sta);
 u32	rtw_restructure_vht_ie(_adapter *padapter, u8 *in_ie, u8 *out_ie, uint in_len, uint *pout_len);
 void	VHTOnAssocRsp(_adapter *padapter);
 u8	rtw_vht_mcsmap_to_nss(u8 *pvht_mcs_map);
-extern const u16 VHT_MCS_DATA_RATE[3][2][30]:
+extern const u16 VHT_MCS_DATA_RATE[3][2][30];
 void rtw_vht_nss_to_mcsmap(u8 nss, u8 *target_mcs_map, u8 *cur_mcs_map);
 void rtw_vht_ies_attach(_adapter *padapter, WLAN_BSSID_EX *pcur_network);
 void rtw_vht_ies_detach(_adapter *padapter, WLAN_BSSID_EX *pcur_network);
